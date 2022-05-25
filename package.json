@@ -1,0 +1,24 @@
+{
+  "name": "microservices-demo-tests",
+  "version": "0.1.0",
+  "description": "Sample cloud-native application with 10 microservices showcasing Kubernetes, Istio, gRPC and OpenTelemetry.",
+  "scripts": {
+    "test": "mocha --no-timeouts mocha/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sealights/microservices-demo-tests.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sealights/microservices-demo-tests/issues"
+  },
+  "homepage": "https://github.com/Sealights/microservices-demo-tests#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.0.0"
+  }
+}
