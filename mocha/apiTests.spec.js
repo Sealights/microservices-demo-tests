@@ -15,6 +15,12 @@ const end5 = `${endpoint}/product/66VCHSJNUP`;
 const end6 = `${endpoint}/incorrectroute`;
 
 describe("Test online boutique", () => {
+	afterEach(async () => {
+		// needs to add just for specific case of tests working.
+		// could be deleted in case of it's useless
+		await new Promise(res => setTimeout(res, 20 * 1000))
+	})
+
 	it("Request of main page should return HTML", async () => {
 		const { status, data } = await axios.get(end1);
 
