@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Sample cloud-native application with 10 microservices showcasing Kubernetes, Istio, gRPC and OpenTelemetry.",
   "scripts": {
-    "test": "mocha mocha/ --recursive"
+    "test": "mocha mocha/ --recursive --timeout=10000"
   },
   "repository": {
     "type": "git",
