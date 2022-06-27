@@ -19,7 +19,7 @@
     "axios": "^0.27.2",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^10.0.0",
+    "mocha": "6.0.0",
     "sl-otel-agent": "https://sl-repo-dev.s3.amazonaws.com/sl-otel-agent-0.3.3-beta.tgz",
     "slnodejs": "https://sl-repo-dev.s3.amazonaws.com/slnodejs-1.0.7-beta.tgz",
     "puppeteer": "^14.4.1",
