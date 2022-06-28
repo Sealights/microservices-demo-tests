@@ -34,7 +34,7 @@ const products = [
 
 describe("Test online boutique", () => {
 	beforeEach(async () => {
-		await wait(0)
+		await wait(20)
 	})
 
 	it("Request of main page should return HTML", async () => {
