@@ -36,7 +36,7 @@
         <sl.buildScannerJar>sl-build-scanner.jar</sl.buildScannerJar>
         <!--suppress UnresolvedMavenProperty -->
         <sl.buildName>${buildNumber}</sl.buildName>
-        <sl.appName>${project.artifactId}</sl.appName>
+        <sl.appName>SL-Boutique</sl.appName>
         <sl.testStage>Unit Tests</sl.testStage>
         <sl.labId>local</sl.labId>
 
