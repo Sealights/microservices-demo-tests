@@ -38,6 +38,7 @@
         <sl.buildName>${buildNumber}</sl.buildName>
         <sl.appName>SL-Boutique</sl.appName>
         <sl.testStage>Unit Tests</sl.testStage>
+        <sl.runTestOnly>true</sl.runTestOnly>
         <sl.labId>local</sl.labId>
 
         <!-- maven properties -->
@@ -197,6 +198,7 @@
                             <labId>${sl.labId}</labId>
                             <tokenFile>${sl.tokenFile}</tokenFile>
                             <createBuildSessionId>true</createBuildSessionId>
+                            <runTestOnly>${sl.runTestOnly}</runTestOnly>
                             <testListenerJar>${sl.testListenerJar}</testListenerJar>
                             <buildScannerJar>${sl.buildScannerJar}</buildScannerJar>
                             <packagesincluded>io.sl.demo.*</packagesincluded>
