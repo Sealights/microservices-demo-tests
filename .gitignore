@@ -110,3 +110,7 @@ package-lock.json
 .DS_Store
 
 .npmrc
+
+# Idea project file
+*.iml
+*.out.txt
