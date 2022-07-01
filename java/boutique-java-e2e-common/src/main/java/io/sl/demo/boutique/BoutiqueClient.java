@@ -93,7 +93,7 @@ public abstract class BoutiqueClient {
 
         String requestBody = BoutiqueUtils.toJsonStr(requestBodyMap);
         HttpResponse httpResponse = BoutiqueUtils.sendPostRequest(uri, requestBody);
-        assert assertResponseStatusCode(httpResponse, 500);
+        assert assertResponseStatusCode(httpResponse, 200);
         assert isContainsDoctype(httpResponse);
     }
 
@@ -125,7 +125,7 @@ public abstract class BoutiqueClient {
     public void requestCartCheckout() throws IOException {
         String url = getEndpointUri(boutiqueBaseUrl, END3_CART_CHECKOUT_EP);
         HttpResponse httpResponse = sendPostRequest(url, "{}");
-        assert assertResponseStatusCode(httpResponse, 500);
+        assert assertResponseStatusCode(httpResponse, 200);
         assert isContainsDoctype(httpResponse);
     }
 

@@ -24,7 +24,7 @@ import java.nio.charset.Charset;
 @Slf4j
 public class BoutiqueUtils {
 
-    public static final String DEFAULT_BOUTIQUE_BASE_URL = "http://boutique.dev.sealights.co:8080/";
+    public static final String DEFAULT_BOUTIQUE_BASE_URL = "http://aa5174ca5746b43a39c0ddb2b2d1da06-1798784314.us-east-2.elb.amazonaws.com/";
     public static final int DEFAULT_TIMEOUT = 10_000;
     private static final Gson GSON = new GsonBuilder()
             .setPrettyPrinting()
@@ -114,6 +114,6 @@ public class BoutiqueUtils {
             sb.append("\n}\n\n");
         }
         sb.append("\n\n");
-        log.debug(sb.toString());
+        log.trace(sb.toString());
     }
 }
