@@ -6,7 +6,7 @@ const chaiAsPromised = require('chai-as-promised');
 const puppeteer = require("puppeteer");
 chai.use(chaiAsPromised);
 
-const endpoint = process.env.TEST_ENDPOINT || `http://boutique.dev.sealights.co:8080`
+const endpoint = process.env.TEST_ENDPOINT || `http://aa5174ca5746b43a39c0ddb2b2d1da06-1798784314.us-east-2.elb.amazonaws.com`
 
 const end1 = `${endpoint}/`;
 const end2 = `${endpoint}/cart`;
@@ -42,6 +42,12 @@ describe("Test online boutique", () => {
 
 		expect(status).to.equal(200);
 		expect(data).to.contain("DOCTYPE");
+	});
+
+	it("It get products", async () => {
+		const { status, data } = await axios.get(end2)
+
+		await expect(status).to.equal(200)
 	});
 
 	it("Get product page", async () => {
