@@ -44,7 +44,7 @@ describe("Test online boutique", () => {
 		expect(data).to.contain("DOCTYPE");
 	});
 
-	it("It get products", async () => {
+	it("It gets products", async () => {
 		const { status, data } = await axios.get(end2)
 
 		await expect(status).to.equal(200)
@@ -59,6 +59,7 @@ describe("Test online boutique", () => {
 
 	it("It should create order", async () => {
 		await axios.get(end7 + products[8]);
+		const { status: status1, data: data1 } = await axios.get(end2)
 		const { status, data }  = await axios
 			.post(end3, {
 				payload: {
