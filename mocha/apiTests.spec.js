@@ -34,7 +34,7 @@ const products = [
 
 describe("Test online boutique", () => {
 	beforeEach(async () => {
-		await wait(0)
+		await wait(20)
 	})
 
 	it("Request of main page should return HTML", async () => {
@@ -42,6 +42,12 @@ describe("Test online boutique", () => {
 
 		expect(status).to.equal(200);
 		expect(data).to.contain("DOCTYPE");
+	});
+
+	it("It gets products", async () => {
+		const { status, data } = await axios.get(end2)
+
+		await expect(status).to.equal(200)
 	});
 
 	it("Get product page", async () => {
@@ -53,6 +59,7 @@ describe("Test online boutique", () => {
 
 	it("It should create order", async () => {
 		await axios.get(end7 + products[8]);
+		const { status: status1, data: data1 } = await axios.get(end2)
 		const { status, data }  = await axios
 			.post(end3, {
 				payload: {

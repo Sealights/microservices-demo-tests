@@ -1,0 +1,21 @@
+<configuration>
+    <property name="logback.log.pattern" value="%date{yyyy-MM-dd HH:mm:ss.SSS Z,UTC}\t%-5level\t%logger{30}: %msg%n"/>
+
+   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>${logback.log.pattern}</pattern>
+        </encoder>
+
+    </appender>
+
+
+    <logger name="io.sl.demo" level="debug" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

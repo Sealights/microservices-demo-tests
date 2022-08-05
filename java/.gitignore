@@ -1,0 +1,7 @@
+mvn.out.*
+mvn.out
+*.out.txt
+.idea
+*.iml
+target
+buildNumber.properties
