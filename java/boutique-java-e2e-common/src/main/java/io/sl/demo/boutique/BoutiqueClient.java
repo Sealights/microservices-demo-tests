@@ -60,6 +60,7 @@ public abstract class BoutiqueClient {
 
     @ForTesting
     public void requestOfMainPageShouldReturnHTML() throws IOException {
+        log.info("test: {}", "requestOfMainPageShouldReturnHTML");
         String uri = getEndpointUri(boutiqueBaseUrl, END1_ROOT_EP);
         HttpResponse httpResponse = sendGetRequest(uri);
         assert assertResponseStatusCode(httpResponse, 200);
@@ -68,6 +69,7 @@ public abstract class BoutiqueClient {
 
     @ForTesting
     public void getProductPage() throws IOException {
+        log.info("test: {}", "getProductPage");
         String uri = getEndpointUri(boutiqueBaseUrl, END1_ROOT_EP, END7_PRODUCT_EP, END6_EXISTING_PRODUCT);
         HttpResponse httpResponse = sendGetRequest(uri);
         assert assertResponseStatusCode(httpResponse, 200);
@@ -77,7 +79,10 @@ public abstract class BoutiqueClient {
 
     @ForTesting
     public void itShouldCreateOrder() throws IOException {
+        log.info("test: {}", "itShouldCreateOrder");
         sendGetRequest(getEndpointUri(boutiqueBaseUrl, END7_PRODUCT_EP, END6_EXISTING_PRODUCT));
+        String cartUri = getEndpointUri(boutiqueBaseUrl, END2_CART_EP);
+
         String uri = getEndpointUri(boutiqueBaseUrl, END3_CART_CHECKOUT_EP);
         Map<String, Object> requestBodyMap = new HashMap<>();
         requestBodyMap.put("email", "someone@example.com");
@@ -91,6 +96,9 @@ public abstract class BoutiqueClient {
         requestBodyMap.put("credit_card_expiration_year", "2039");
         requestBodyMap.put("credit_card_cvv", "672");
 
+        HttpResponse cartResponse = sendGetRequest(cartUri);
+        assert assertResponseStatusCode(cartResponse, 200);
+
         String requestBody = BoutiqueUtils.toJsonStr(requestBodyMap);
         HttpResponse httpResponse = BoutiqueUtils.sendPostRequest(uri, requestBody);
         assert assertResponseStatusCode(httpResponse, 200);
@@ -99,6 +107,7 @@ public abstract class BoutiqueClient {
 
     @ForTesting
     public void shouldNotFindProduct() throws IOException {
+        log.info("test: {}", "shouldNotFindProduct");
         String url = getEndpointUri(boutiqueBaseUrl, END4_NON_EXISTING_PRODUCT);
         HttpResponse httpResponse = sendGetRequest(url);
         assert assertResponseStatusCode(httpResponse, 500);
@@ -107,6 +116,7 @@ public abstract class BoutiqueClient {
 
     @ForTesting
     public void requestOfWrongPageShouldReturn404() throws IOException {
+        log.info("test: {}", "requestOfWrongPageShouldReturn404");
         String url = getEndpointUri(boutiqueBaseUrl, END5_INCORRECT_EP);
         HttpResponse httpResponse = sendGetRequest(url);
         assert assertResponseStatusCode(httpResponse, 404);
@@ -115,6 +125,7 @@ public abstract class BoutiqueClient {
 
     @ForTesting
     public void requestCart() throws IOException {
+        log.info("test: {}", "requestCart");
         String url = getEndpointUri(boutiqueBaseUrl, END2_CART_EP);
         HttpResponse httpResponse = sendGetRequest(url);
         assert assertResponseStatusCode(httpResponse, 200);
@@ -123,6 +134,7 @@ public abstract class BoutiqueClient {
 
     @ForTesting
     public void requestCartCheckout() throws IOException {
+        log.info("test: {}", "requestCartCheckout");
         String url = getEndpointUri(boutiqueBaseUrl, END3_CART_CHECKOUT_EP);
         HttpResponse httpResponse = sendPostRequest(url, "{}");
         assert assertResponseStatusCode(httpResponse, 200);
