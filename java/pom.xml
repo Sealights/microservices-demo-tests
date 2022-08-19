@@ -212,7 +212,6 @@
                             <logLevel>info</logLevel>
                             <sealightsJvmParams>
                                 <sl.otel.enabled>true</sl.otel.enabled>
-                                <sl.otel.loadAgent>true</sl.otel.loadAgent>
                             </sealightsJvmParams>
                         </configuration>
                         <executions>
