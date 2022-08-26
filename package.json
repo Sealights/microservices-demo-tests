@@ -20,8 +20,8 @@
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "mocha": "^10.0.0",
-    "sl-otel-agent": "https://sl-repo-dev.s3.amazonaws.com/sl-otel-agent-0.4.3.tgz",
-    "slnodejs": "https://sl-repo-dev.s3.amazonaws.com/slnodejs-1.1.0.tgz",
+    "sl-otel-agent": "https://sl-repo-dev.s3.amazonaws.com/sl-otel-agent-0.4.3-check-test.tgz",
+    "slnodejs": "https://sl-repo-dev.s3.amazonaws.com/slnodejs-1.0.4-check-test.tgz",
     "puppeteer": "^14.4.1",
     "puppeteer-core": "^14.4.1"
   }
